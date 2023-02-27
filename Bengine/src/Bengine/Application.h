@@ -2,6 +2,12 @@
 
 #include "Core.h"
 
+#include "Window.h"
+#include "Bengine/LayerStack.h"
+#include "Bengine/Events/Event.h"
+#include "Bengine/Events/ApplicationEvent.h"
+
+
 namespace Bengine
 {
 
@@ -12,6 +18,24 @@ namespace Bengine
 		virtual ~Application();
 		void Run();
 
+		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverLay(Layer* overlay);
+
+		inline Window& GetWindow() { return *m_Window; }
+
+		inline static Application& Get() { return *s_Instance; }
+	private:
+
+		bool OnWindowClose(WindowCloseEvent& e);
+
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
+
+		LayerStack m_LayerStack;
+	private:
+		static Application* s_Instance;
 	};
 
 	//To be defined in CLIENT  

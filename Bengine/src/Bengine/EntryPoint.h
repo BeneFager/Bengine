@@ -6,6 +6,9 @@ extern Bengine::Application* Bengine::CreateApplication();
 
 int main(int argc, char** argv)
 {
+
+	Bengine::Log::Init();
+
 	auto app = Bengine::CreateApplication();
 	app->Run();
 	delete app;
