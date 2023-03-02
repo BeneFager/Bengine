@@ -75,12 +75,12 @@ project "Bengine"
 	filter "configurations:Debug"
 		defines "BE_DEBUG"
 		buildoptions "/MDd"
-		symbols "On"	
+		symbols "On"
 
 	filter "configurations:Release"
 		defines "BE_RELEASE"
 		buildoptions "/MD"
-		optimize "On"	
+		optimize "On"
 
 	filter "configurations:Dist"
 		defines "BE_DIST"
@@ -122,16 +122,16 @@ project "Sandbox"
 		{
 			"BE_PLATFORM_WINDOWS"
 		}
-		
+
 	filter "configurations:Debug"
 		defines "BE_DEBUG"
 		buildoptions "/MDd"
-		symbols "On"	
+		symbols "On"
 
 	filter "configurations:Release"
 		defines "BE_RELEASE"
 		buildoptions "/MD"
-		optimize "On"	
+		optimize "On"
 
 	filter "configurations:Dist"
 		defines "BE_DIST"

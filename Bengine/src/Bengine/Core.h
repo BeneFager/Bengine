@@ -11,6 +11,11 @@
 #endif // BE_PLATFORM_WINDOWS
 
 
+
+#ifdef BE_DEBUG
+	#define BE_ENABLE_ASSERTS
+#endif
+
 #ifdef BE_ENABLE_ASSERTS
 	#define BE_ASSERT(x, ...) { if(!(x)) {BE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}
 	#define BE_CORE_ASSERT(x, ...) { if(!(x)) {BE_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak();}}	
